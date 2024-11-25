@@ -61,7 +61,6 @@ jobs:
   dast_scan:
     name: Run DAST Scan
     runs-on: ubuntu-latest
-
     steps:
       - name: Deploy PyGoat
         run: |
@@ -72,7 +71,7 @@ jobs:
         uses: zaproxy/action-full-scan@v0.9.0
         with:
           target: http://localhost:8000
-          cmd_options: '-t http://localhost:8000 -r zap-report.xml'
+          cmd_options: '-t http://localhost:8000 -r zap-report.xml'  # Generates XML report
           fail_action: false
           allow_issue_writing: false
 
